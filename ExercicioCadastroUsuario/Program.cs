@@ -13,12 +13,15 @@ do
         case 1:
             Console.WriteLine("cadastrar nome de usuario: ");
             for (int i = 0; i < nomeCadastro.Length; i++)
-                nomeCadastro[i] = Console.Readline();
+                nomeCadastro[i] = Console.ReadLine();
             break;
         
         case 2:
-            Console.WriteLine("Listar selecionado.");
-            // Lógica para listar
+            for (int i = 0; j < nomeCadastro.Length; i++)
+            {
+                Console.WriteLine("Lista de usuários:");
+                Console.WriteLine(nomeCadastro[i]);
+            }
             break;
         
         case 3:
