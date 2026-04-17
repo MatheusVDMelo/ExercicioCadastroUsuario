@@ -1,4 +1,5 @@
-﻿int opcao = 0;
+﻿
+int opcao = 0;
 do
 {
     Console.WriteLine("Menu:");
@@ -24,4 +25,14 @@ do
             Console.WriteLine("Opção inválida. Tente novamente.");
             break;
     }
-} 
+    if (opcao == 3)
+    {
+        Console.WriteLine("Digite o nome do item para buscar ou remover:");
+        string nomeItem = Console.ReadLine();
+        // Lógica para buscar ou remover o item
+
+    }
+
+}
+        
+
