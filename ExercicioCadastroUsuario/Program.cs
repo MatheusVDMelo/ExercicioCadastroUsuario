@@ -15,7 +15,7 @@ do
             for (int i = 0; i < nomeCadastro.Length; i++)
                 nomeCadastro[i] = Console.ReadLine();
             break;
-        
+
         case 2:
             for (int i = 0; j < nomeCadastro.Length; i++)
             {
@@ -23,13 +23,13 @@ do
                 Console.WriteLine(nomeCadastro[i]);
             }
             break;
-        
+
         case 3:
             Console.WriteLine("Buscar e remoção selecionada");
             break;
-        
+
         default:
             Console.WriteLine("Opção inválida. Tente novamente.");
             break;
     }
-} 
+};
