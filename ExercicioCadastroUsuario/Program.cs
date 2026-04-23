@@ -1,10 +1,11 @@
-using System.ComponentModel.Design;
 
+using System.ComponentModel.Design;
 int opcao = 0;
 string[] nomeCadastro = new string[10];
 int indice = 0;
 
 while (opcao != 4)
+
 {
     Console.WriteLine(" -------------------------------");
     Console.WriteLine("|    Escolha uma opção:         |");
@@ -84,4 +85,15 @@ while (opcao != 4)
             Console.WriteLine("Opção inválida. Tente novamente.");
             break;
     }
+
+    if (opcao == 3)
+    {
+        Console.WriteLine("Digite o nome do item para buscar ou remover:");
+        string nomeItem = Console.ReadLine();
+        // Lógica para buscar ou remover o item
+
+    }
+
 }
+
+
