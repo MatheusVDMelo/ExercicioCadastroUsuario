@@ -1,4 +1,7 @@
-﻿string[] nomescadastro = new string[1];
+int opcao = 0;
+string[] nomeCadastro = new string[10];
+do
+﻿string[] nomescadastro = new string[5];
 int opcao = 0;
 int indice = 0;
 
@@ -42,6 +45,7 @@ while (opcao != 4)
         case 4:
             Console.WriteLine("Saindo do programa...");
             break;
+
         default:
             Console.WriteLine("Opção inválida. Tente novamente.");
             break;
