@@ -1,3 +1,5 @@
+using System.ComponentModel.Design;
+
 int opcao = 0;
 string[] nomeCadastro = new string[10];
 int indice = 0;
@@ -25,24 +27,55 @@ while (opcao != 4)
             break;
         case 2:
             Console.Clear();
-            for (int i = 0; i < nomeCadastro.Length; i++)
+            for (int i = 0; i < indice; i++)
             {
                 Console.WriteLine(nomeCadastro[i]);
             }
             break;
         case 3:
-            Console.WriteLine("Digite o nome do cadastro para remoção:");
+            Console.WriteLine("`b` para buscar");
+            Console.WriteLine("`e` para excluir");
             string nomeRemocao = Console.ReadLine();
-            for (int i = 0; i < indice; i++)
+            
             {
-                if (nomeCadastro[i] == nomeRemocao)
+                if (nomeRemocao == "e")
                 {
-                    nomeCadastro[i] = null;
-                    Console.WriteLine("Cadastro removido com sucesso!");
+                    Console.WriteLine("qual nome deseja remover: ");
+                    nomeRemocao = Console.ReadLine();
+                    for (int i = 0; i < indice; i++)
+                        if (nomeRemocao == nomeCadastro[i])
+                    {
+                        nomeCadastro[i] = null;
+                        Console.WriteLine("Cadastro removido com sucesso!");
+                    }
+             
+                }
+                else if (nomeRemocao == "b")
+                    for (int i = 0; i < indice; i++)
+                    {
+                    Console.WriteLine("qual nome deseja consultar:");
+                    string tempNome;
+                    tempNome = Console.ReadLine();
+
+                    if (tempNome == nomeCadastro[i])
+                    {
+                        Console.WriteLine($"nome {nomeCadastro[i]} esta na lista!");
+                    }
+                    
+                    else
+                    {
+                        Console.WriteLine("nome inexistente!");
+                    }
                     break;
                 }
+                else
+                {
+                    Console.WriteLine("opcao invalida");
+                }
+                break;
+
             }
-            break;
+
         case 4:
             Console.WriteLine("Programa encerrado com sucesso.");
             break;
