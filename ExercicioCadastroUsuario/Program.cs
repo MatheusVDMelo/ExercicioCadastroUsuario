@@ -1,5 +1,5 @@
-﻿string[] nomescadastro = new string[1];
 int opcao = 0;
+string[] nomeCadastro = new string[1];
 int indice = 0;
 
 while (opcao != 4)
@@ -16,14 +16,14 @@ while (opcao != 4)
         case 1:
             { 
                 Console.WriteLine("Digite o nome do cadastro");
-                nomescadastro[indice] = Console.ReadLine();
+                nomeCadastro[indice] = Console.ReadLine();
                 indice++;
             }
             break;
         case 2:
-            for (int i = 0; i < nomescadastro.Length; i++)
+            for (int i = 0; i < nomeCadastro.Length; i++)
             {
-                Console.WriteLine(nomescadastro[i]);
+                Console.WriteLine(nomeCadastro[i]);
             }
             break;
         case 3:
@@ -31,9 +31,9 @@ while (opcao != 4)
             string nomeRemocao = Console.ReadLine();
             for (int i = 0; i < indice; i++)
             {
-                if (nomescadastro[i] == nomeRemocao)
+                if (nomeCadastro[i] == nomeRemocao)
                 {
-                    nomescadastro[i] = null;
+                    nomeCadastro[i] = null;
                     Console.WriteLine("Cadastro removido com sucesso!");
                     break;
                 }
@@ -42,6 +42,7 @@ while (opcao != 4)
         case 4:
             Console.WriteLine("Saindo do programa...");
             break;
+
         default:
             Console.WriteLine("Opção inválida. Tente novamente.");
             break;
