@@ -29,7 +29,7 @@ while (opcao != 4)
         case 3:
             Console.WriteLine("Digite o nome do cadastro para remoção");
             string nomeRemocao = Console.ReadLine();
-            for (int i = 0; i < nomescadastro.Length; i++)
+            for (int i = 0; i < indice; i++)
             {
                 if (nomescadastro[i] == nomeRemocao)
                 {
