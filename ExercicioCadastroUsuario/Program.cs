@@ -71,8 +71,7 @@ while (opcao != 4)
                 break;
 
             }
-            break;
-            
+
         case 4:
             Console.WriteLine("Saindo do programa...");
             break;
