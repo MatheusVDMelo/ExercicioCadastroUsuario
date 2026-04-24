@@ -37,7 +37,7 @@ while (opcao != 4)
             Console.WriteLine("`b` para buscar");
             Console.WriteLine("`e` para excluir");
             string nomeRemocao = Console.ReadLine();
-            
+
             {
                 if (nomeRemocao == "e")
                 {
@@ -45,30 +45,31 @@ while (opcao != 4)
                     nomeRemocao = Console.ReadLine();
                     for (int i = 0; i < indice; i++)
                         if (nomeRemocao == nomeCadastro[i])
-                    {
-                        nomeCadastro[i] = null;
-                        Console.WriteLine("Cadastro removido com sucesso!");
-                    }
-             
+                        {
+                            nomeCadastro[i] = null;
+                            Console.WriteLine("Cadastro removido com sucesso!");
+                        }
+
                 }
                 else if (nomeRemocao == "b")
-                    for (int i = 0; i < indice; i++)
-                    {
-                    Console.WriteLine("qual nome deseja consultar:");
-                    string tempNome;
-                    tempNome = Console.ReadLine();
-
-                    if (tempNome == nomeCadastro[i])
-                    {
-                        Console.WriteLine($"nome {nomeCadastro[i]} esta na lista!");
-                    }
                     
-                    else
                     {
-                        Console.WriteLine("nome inexistente!");
+                    string tempNome;
+                        
+                        Console.WriteLine("qual nome deseja consultar:");
+                        tempNome = Console.ReadLine();
+                    for (int i = 0; i < indice; i++)
+                        if (tempNome == nomeCadastro[i])
+                        {
+                            Console.WriteLine($"nome {nomeCadastro[i]} esta na lista!");
+                        }
+                    for (int i = 0; i < indice; i++)
+                        if (tempNome != nomeCadastro[i])
+                        {
+                            Console.WriteLine("nome inexistente!");
+                        }
+                        break;
                     }
-                    break;
-                }
                 else
                 {
                     Console.WriteLine("opcao invalida");
