@@ -13,7 +13,7 @@ while (opcao != 4)
     Console.WriteLine("|    2 - Listagem e exebição;   |");
     Console.WriteLine("|    3 - Busca e remoção;       |");
     Console.WriteLine("|    4 - Sair.                  |");
-    Console.WriteLine(" ------------------------------- ");
+    Console.WriteLine(" ------------------------------- "); 
     opcao = int.Parse(Console.ReadLine());
 
     switch (opcao)
