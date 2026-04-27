@@ -8,23 +8,27 @@ int indice = 0;
 while (opcao != 4)
 
 {
-    Console.WriteLine("Escolha uma opção");
-    Console.WriteLine("1 - Cadastro");
-    Console.WriteLine("2 - Listagem e exebição");
-    Console.WriteLine("3 - Busca e remoção");
-    Console.WriteLine("4 - Sair");
+    Console.WriteLine(" -------------------------------");
+    Console.WriteLine("|    Escolha uma opção:         |");
+    Console.WriteLine("|    1 - Cadastro;              |");
+    Console.WriteLine("|    2 - Listagem e exebição;   |");
+    Console.WriteLine("|    3 - Busca e remoção;       |");
+    Console.WriteLine("|    4 - Sair.                  |");
+    Console.WriteLine(" ------------------------------- "); 
     opcao = int.Parse(Console.ReadLine());
 
     switch (opcao)
     {
         case 1:
             {
-                Console.WriteLine("Digite o nome do cadastro");
+                Console.Clear();
+                Console.Write("Digite o nome do cadastro:");
                 nomeCadastro[indice] = Console.ReadLine();
                 indice++;
             }
             break;
         case 2:
+            Console.Clear();
             for (int i = 0; i < indice; i++)
             {
                 Console.WriteLine(nomeCadastro[i]);
@@ -85,7 +89,7 @@ while (opcao != 4)
         
 
         case 4:
-            Console.WriteLine("Saindo do programa...");
+            Console.WriteLine("Programa encerrado com sucesso.");
             break;
 
         default:
