@@ -1,5 +1,6 @@
 
 using System.ComponentModel.Design;
+using System.Numerics;
 int opcao = 0;
 string[] nomeCadastro = new string[10];
 int indice = 0;
@@ -33,50 +34,59 @@ while (opcao != 4)
                 Console.WriteLine(nomeCadastro[i]);
             }
             break;
+
         case 3:
             Console.WriteLine("`b` para buscar");
             Console.WriteLine("`e` para excluir");
-            string nomeRemocao = Console.ReadLine();
+            string acao = Console.ReadLine();
 
+
+            if (acao == "e")
             {
-                if (nomeRemocao == "e")
+                Console.WriteLine("Qual nome deseja remover?");
+                string nomeRemover = Console.ReadLine();
+                bool removido = false;
+                for (int i = 0; i < indice; i++)
                 {
-                    Console.WriteLine("qual nome deseja remover: ");
-                    nomeRemocao = Console.ReadLine();
-                    for (int i = 0; i < indice; i++)
-                        if (nomeRemocao == nomeCadastro[i])
-                        {
-                            nomeCadastro[i] = null;
-                            Console.WriteLine("Cadastro removido com sucesso!");
-                        }
-
-                }
-                else if (nomeRemocao == "b")
-                    
+                    if (nomeCadastro[i] == nomeRemover)
                     {
-                    string tempNome;
-                        
-                        Console.WriteLine("qual nome deseja consultar:");
-                        tempNome = Console.ReadLine();
-                    for (int i = 0; i < indice; i++)
-                        if (tempNome == nomeCadastro[i])
-                        {
-                            Console.WriteLine($"nome {nomeCadastro[i]} esta na lista!");
-                        }
-                    for (int i = 0; i < indice; i++)
-                        if (tempNome != nomeCadastro[i])
-                        {
-                            Console.WriteLine("nome inexistente!");
-                        }
+                        // Desloca os elementos para não deixar null
+                        for (int j = i; j < indice - 1; j++)
+                            nomeCadastro[j] = nomeCadastro[j + 1];
+                        nomeCadastro[indice - 1] = null;
+                        indice--;
+                        removido = true;
+                        Console.WriteLine("Cadastro removido com sucesso!");
                         break;
                     }
-                else
-                {
-                    Console.WriteLine("opcao invalida");
                 }
-                break;
-
+                if (!removido)
+                    Console.WriteLine("Nome não encontrado.");
             }
+            else if (acao == "b")
+            {
+                Console.WriteLine("Qual nome deseja consultar?");
+                string nomeBuscar = Console.ReadLine();
+                bool encontrado = false;
+                for (int i = 0; i < indice; i++)
+                {
+                    if (nomeCadastro[i] == nomeBuscar)
+                    {
+                        Console.WriteLine($"Nome {nomeCadastro[i]} está na lista!");
+                        encontrado = true;
+                        break;
+                    }
+                }
+                if (!encontrado)
+                    Console.WriteLine("Nome inexistente!");
+            }
+            else
+            {
+                Console.WriteLine("Opção inválida.");
+            }
+            break;
+
+        
 
         case 4:
             Console.WriteLine("Programa encerrado com sucesso.");
@@ -87,13 +97,7 @@ while (opcao != 4)
             break;
     }
 
-    if (opcao == 3)
-    {
-        Console.WriteLine("Digite o nome do item para buscar ou remover:");
-        string nomeItem = Console.ReadLine();
-        // Lógica para buscar ou remover o item
 
-    }
 
 }
 
