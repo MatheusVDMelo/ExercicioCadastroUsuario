@@ -46,32 +46,39 @@ while (opcao != 4)
                         }
 
                 }
-                else if (nomeRemocao == "b")
-                    
+                else if (opc == "b")
+                {
+                    Console.WriteLine("Qual nome deseja consultar:");
+                    string tempNome = Console.ReadLine();
+
+                    bool encontrado = false;
+
+                    for (int i = 0; i < indice; i++)
                     {
-                    string tempNome;
-                        
-                        Console.WriteLine("qual nome deseja consultar:");
-                        tempNome = Console.ReadLine();
-                    for (int i = 0; i < indice; i++)
-                        if (tempNome == nomeCadastro[i])
+                        if (nomeCadastro[i] == tempNome)
                         {
-                            Console.WriteLine($"nome {nomeCadastro[i]} esta na lista!");
+                            Console.WriteLine($"Nome {nomeCadastro[i]} está na lista!");
+                            encontrado = true;
+                            break;
                         }
-                    for (int i = 0; i < indice; i++)
-                        if (tempNome != nomeCadastro[i])
-                        {
-                            Console.WriteLine("nome inexistente!");
-                        }
-                        break;
                     }
+
+                    if (!encontrado)
+                    {
+                        Console.WriteLine("Nome inexistente!");
+                    }
+                }
                 else
                 {
+                    Console.WriteLine("Opção inválida");
+                }
+
+                break;
+            }
+            {
                     Console.WriteLine("opcao invalida");
                 }
                 break;
-
-            }
 
         case 4:
             Console.WriteLine("Saindo do programa...");
