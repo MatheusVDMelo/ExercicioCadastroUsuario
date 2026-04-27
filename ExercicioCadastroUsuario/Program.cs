@@ -1,5 +1,6 @@
 
 using System.ComponentModel.Design;
+using System.Numerics;
 int opcao = 0;
 string[] nomeCadastro = new string[10];
 int indice = 0;
@@ -32,22 +33,22 @@ while (opcao != 4)
         case 3:
             Console.WriteLine("`b` para buscar");
             Console.WriteLine("`e` para excluir");
-            string nomeRemocao = Console.ReadLine();
+            string acao = Console.ReadLine();
             
             {
-                if (nomeRemocao == "e")
+                if (acao == "e")
                 {
                     Console.WriteLine("qual nome deseja remover: ");
-                    nomeRemocao = Console.ReadLine();
+                    acao = Console.ReadLine();
                     for (int i = 0; i < indice; i++)
-                        if (nomeRemocao == nomeCadastro[i])
+                        if (acao == nomeCadastro[i])
                     {
                         nomeCadastro[i] = null;
                         Console.WriteLine("Cadastro removido com sucesso!");
                     }
              
                 }
-                else if (nomeRemocao == "b")
+                else if (acao == "b")
                     for (int i = 0; i < indice; i++)
                     {
                     Console.WriteLine("qual nome deseja consultar:");
